@@ -27,10 +27,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = "menu") {
-                composable("menu") { MenuScreen(navController) }
-                composable("detail") { DetailScreen(navController) }
-                composable("success") { SuccessScreen(navController) }
+            NavHost(
+                navController = navController,
+                startDestination = "menu"
+            ) {
+                composable("menu") {
+                    MenuScreen(navController)
+                }
+
+                composable("detail") {
+                    DetailScreen(navController)
+                }
+
+                composable("success") {
+                    SuccessScreen(navController)
+                }
             }
         }
     }
